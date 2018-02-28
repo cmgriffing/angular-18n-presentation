@@ -5,8 +5,6 @@
 
 [i18n Plans Github Issue](https://github.com/angular/angular/issues/16477#issue-225727620)
 
----
-
 ## something else?
 
 ---

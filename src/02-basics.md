@@ -41,7 +41,7 @@ You are even able to nest ICU syntax. The angular docs show an example of this, 
 
 ## Extraction
 
-```
+```bash
 ng xi18n
 ```
 
@@ -78,19 +78,19 @@ Applications:
 
 Build:
 
-```
+```bash
 ng build --aot --locale fr --i18n-format xlf --i18n-file src/locale/messages.fr.xlf --missing-translation error
 ```
 
 That will overwrite your dist though, so maybe instead you want to add this:
 
-```
+```bash
 --output-path dist/fr
 ```
 
 What if your app is served like this `https://myapp.com/fr/`?
 
-```
+```bash
 --base-href /fr/
 ```
 

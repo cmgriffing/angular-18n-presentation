@@ -151,7 +151,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </section>
 <section id="extraction" class="level2">
 <h2>Extraction</h2>
-<pre><code>ng xi18n</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">ng</span> xi18n</code></pre></div>
 <aside class="notes">
 <p>You can add paramaters to change things such as where the messages.xlf file is output to.</p>
 <p>By default it will just create it in the src directory.</p>
@@ -186,11 +186,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <section id="compilation" class="level2">
 <h2>Compilation</h2>
 <p>Build:</p>
-<pre><code>ng build --aot --locale fr --i18n-format xlf --i18n-file src/locale/messages.fr.xlf --missing-translation error</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">ng</span> build --aot --locale fr --i18n-format xlf --i18n-file src/locale/messages.fr.xlf --missing-translation error</code></pre></div>
 <p>That will overwrite your dist though, so maybe instead you want to add this:</p>
-<pre><code>--output-path dist/fr</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">--output-path</span> dist/fr</code></pre></div>
 <p>What if your app is served like this <code>https://myapp.com/fr/</code>?</p>
-<pre><code>--base-href /fr/</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">--base-href</span> /fr/</code></pre></div>
 <aside class="notes">
 <p>When looking at the first command, you can also use similar paramaters for ng serve.</p>
 <p>That could prove to be slow and I have had &quot;out of memory&quot; errors before when running ng serve with aot. Your mileage may vary.</p>
@@ -214,31 +214,22 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <section id="caveats" class="level2">
 <h2>Caveats</h2>
 </section>
-</section>
-<section class="slide level1">
-
 <section id="icu-attribute-values" class="level2">
 <h2>ICU Attribute Values</h2>
-<pre><code>&lt;button
-  title=&quot;Delete {{itemCount}} {itemCount, plural, =1 {item} other {items}&quot;
-  i18n-title
-&gt;
-  &lt;i class=&quot;icon delete&quot;&gt;&lt;/i&gt;
-&lt;/button&gt;</code></pre>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;button</span>
+<span class="ot">  title=</span><span class="st">&quot;Delete {{itemCount}} {itemCount, plural, =1 {item} other {items}&quot;</span>
+<span class="ot">  i18n-title</span>
+<span class="kw">&gt;</span>
+  <span class="kw">&lt;i</span><span class="ot"> class=</span><span class="st">&quot;icon delete&quot;</span><span class="kw">&gt;&lt;/i&gt;</span>
+<span class="kw">&lt;/button&gt;</span></code></pre></div>
 </section>
-</section>
-<section class="slide level1">
-
 <section id="nesting" class="level2">
 <h2>Nesting</h2>
-<pre><code>&lt;div i18n&gt;Follow this &lt;a href=&quot;#&quot;&gt;link&lt;/a&gt;.&lt;/div&gt;</code></pre>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;div</span><span class="ot"> i18n</span><span class="kw">&gt;</span>Follow this <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>link<span class="kw">&lt;/a&gt;</span>.<span class="kw">&lt;/div&gt;</span></code></pre></div>
 </section>
-</section>
-<section class="slide level1">
-
 <section id="variable-from-ts-file" class="level2">
 <h2>Variable from ts file</h2>
-<pre><code>&lt;span i18n&gt;{{ someValue }}&lt;/span&gt;</code></pre>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;span</span><span class="ot"> i18n</span><span class="kw">&gt;</span>{{ someValue }}<span class="kw">&lt;/span&gt;</span></code></pre></div>
 </section>
 </section>
 <section class="slide level1">
@@ -248,9 +239,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>(link and screenshot of github issue page pointing out roadmap) <img src="./assets/i18n_plans_for_v5_and_beyond.jpg" alt="i18n plans for v5 and beyond" /></p>
 <p><a href="https://github.com/angular/angular/issues/16477#issue-225727620">i18n Plans Github Issue</a></p>
 </section>
-</section>
-<section class="slide level1">
-
 <section id="something-else" class="level2">
 <h2>something else?</h2>
 </section>
@@ -260,50 +248,38 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <section id="hacks" class="level2">
 <h2>Hacks</h2>
 </section>
-</section>
-<section class="slide level1">
-
 <section id="nesting-1" class="level2">
 <h2>Nesting</h2>
 <p>Instead of:</p>
-<pre><code>&lt;div i18n&gt;Follow this &lt;a href=&quot;#&quot;&gt;link&lt;/a&gt;.&lt;/div&gt;</code></pre>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;div</span><span class="ot"> i18n</span><span class="kw">&gt;</span>Follow this <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>link<span class="kw">&lt;/a&gt;</span>.<span class="kw">&lt;/div&gt;</span></code></pre></div>
 <p>Try:</p>
-<pre><code>&lt;div&gt;&lt;span i18n&gt;Follow this&lt;span&gt; &lt;a href=&quot;#&quot; i18n&gt;link&lt;/a&gt;.&lt;/div&gt;</code></pre>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;div&gt;&lt;span</span><span class="ot"> i18n</span><span class="kw">&gt;</span>Follow this<span class="kw">&lt;span&gt;</span> <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#&quot;</span><span class="ot"> i18n</span><span class="kw">&gt;</span>link<span class="kw">&lt;/a&gt;</span>.<span class="kw">&lt;/div&gt;</span></code></pre></div>
 </section>
-</section>
-<section class="slide level1">
-
 <section id="icu-formatting-in-attributes" class="level2">
 <h2>ICU Formatting in attributes</h2>
-<pre><code>&lt;div hidden&gt;
-  &lt;!-- ICU selection message marked for translation --&gt;
-  &lt;span #altValue i18n&gt;{role, select, tinker {Tinker} tailor {Tailor} soldier {Soldier} spy {Spy}} Profile Image
-&lt;/div&gt;
-&lt;img [alt]=&quot;removeHtmlComments(altValue.innerHTML)&quot; /&gt;</code></pre>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;div</span><span class="ot"> hidden</span><span class="kw">&gt;</span>
+  <span class="co">&lt;!-- ICU selection message marked for translation --&gt;</span>
+  <span class="kw">&lt;span</span> <span class="er">#altValue</span><span class="ot"> i18n</span><span class="kw">&gt;</span>{role, select, tinker {Tinker} tailor {Tailor} soldier {Soldier} spy {Spy}} Profile Image
+<span class="kw">&lt;/div&gt;</span>
+<span class="kw">&lt;img</span> <span class="er">[alt]</span><span class="ot">=</span><span class="st">&quot;removeHtmlComments(altValue.innerHTML)&quot;</span> <span class="kw">/&gt;</span></code></pre></div>
 </section>
-</section>
-<section class="slide level1">
-
 <section id="why-removehtmlcomments" class="level2">
 <h2>Why removeHtmlComments()?</h2>
-<pre><code>&lt;span _ngcontent-c4=&quot;&quot;&gt;&lt;!--bindings={
-  &quot;ng-reflect-ng-switch&quot;: &quot;tinker&quot;
-}--&gt;&lt;!--bindings={
-  &quot;ng-reflect-ng-switch-case&quot;: &quot;tinker&quot;
-}--&gt;Tinker&lt;!--bindings={
-  &quot;ng-reflect-ng-switch-case&quot;: &quot;tailor&quot;
-}--&gt;&lt;!--bindings={
-  &quot;ng-reflect-ng-switch-case&quot;: &quot;soldier&quot;
-}--&gt;&lt;!--bindings={
-  &quot;ng-reflect-ng-switch-case&quot;: &quot;spy&quot;
-}--&gt; Profile Image&lt;/span&gt;</code></pre>
-<pre><code>removeHtmlComments(html) {
-  return html.replace(/&lt;!--[\s\S]*?--&gt;/g, &#39;&#39;);
-}</code></pre>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;span</span><span class="ot"> _ngcontent-c4=</span><span class="st">&quot;&quot;</span><span class="kw">&gt;</span><span class="co">&lt;!--bindings={</span>
+<span class="co">  &quot;ng-reflect-ng-switch&quot;: &quot;tinker&quot;</span>
+<span class="co">}--&gt;&lt;!--bindings={</span>
+<span class="co">  &quot;ng-reflect-ng-switch-case&quot;: &quot;tinker&quot;</span>
+<span class="co">}--&gt;</span>Tinker<span class="co">&lt;!--bindings={</span>
+<span class="co">  &quot;ng-reflect-ng-switch-case&quot;: &quot;tailor&quot;</span>
+<span class="co">}--&gt;&lt;!--bindings={</span>
+<span class="co">  &quot;ng-reflect-ng-switch-case&quot;: &quot;soldier&quot;</span>
+<span class="co">}--&gt;&lt;!--bindings={</span>
+<span class="co">  &quot;ng-reflect-ng-switch-case&quot;: &quot;spy&quot;</span>
+<span class="co">}--&gt;</span> Profile Image<span class="kw">&lt;/span&gt;</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html">removeHtmlComments(html) {
+  return html.replace(/<span class="co">&lt;!--[\s\S]*?--&gt;</span>/g, &#39;&#39;);
+}</code></pre></div>
 </section>
-</section>
-<section class="slide level1">
-
 <section id="dynamically-created-components" class="level2">
 <h2>Dynamically Created Components</h2>
 </section>
