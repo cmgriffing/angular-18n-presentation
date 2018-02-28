@@ -40,7 +40,7 @@ Try:
 }--> Profile Image</span>
 ```
 
-```html
+```javascript
 removeHtmlComments(html) {
   return html.replace(/<!--[\s\S]*?-->/g, '');
 }
