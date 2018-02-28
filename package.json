@@ -1,0 +1,16 @@
+{
+  "name": "angular-i18n-presentation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "pandoc --section-divs -s -t revealjs src/*.md -o html/index.html --verbose --slide-level=1 --from markdown-yaml_metadata_block --variable theme='beige'",
+    "watch": "nodemon --exec \"npm run build\" src/*.md",
+    "deploy": "mkdir -p html/assets && cp -a assets/. html/assets/ && git subtree push --prefix html origin gh-pages"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.15.1"
+  }
+}
