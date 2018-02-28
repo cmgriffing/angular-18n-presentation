@@ -41,7 +41,7 @@ You are even able to nest ICU syntax. The angular docs show an example of this, 
 
 ## Extraction
 
-```bash
+```shell-session
 ng xi18n
 ```
 
@@ -55,42 +55,51 @@ You can also change the format. (`xmb` or `xlf`)
 xlf or XLIFF seems most common.
 </div>
 
-## Editing XLIFF files (Before translation)
+## Editing the XLIFF (Before)
 
-![The starting xliff after extraction](./assets/messages_base_xliff.jpg)
+![](./assets/messages_base_xliff.jpg)
 
-## Editing XLIFF files (After translation)
+## Editing the XLIFF (After)
 
-![The resulting xliff after translation](./assets/messages_gibberish_xliff.jpg)
+![](./assets/messages_gibberish_xliff.jpg)
 
 ## Tools for Editing XLIFF files
 
 Online Tools:
 
-- poeditor.com
-- (TODO: get more)
+- POEditor [https://poeditor.com/](https://poeditor.com/)
+- Matecat [https://www.matecat.com/](https://www.matecat.com/)
+- SmartCAT [https://www.smartcat.ai/](https://www.smartcat.ai/)
 
 Applications:
 
-- (TODO: not remembering their names off the top of my head)
+- Swordfish [https://maxprograms.com/products/swordfish.html](https://maxprograms.com/products/swordfish.html)
+- OmegaT [http://omegat.org/](http://omegat.org/)
+- Transit NXT [Transit NXT](Transit NXT)
+- Wordfast [http://www.wordfast.com/](http://www.wordfast.com/)
+
+Mostly found via:
+[https://en.wikipedia.org/wiki/XLIFF#Related_tools](https://en.wikipedia.org/wiki/XLIFF#Related_tools)
+
+<div class="notes">
+CAT = Computer Aided Translation
+</div>
 
 ## Compilation
 
 Build:
 
-```bash
+```shell-session
 ng build --aot --locale fr --i18n-format xlf --i18n-file src/locale/messages.fr.xlf --missing-translation error
 ```
 
-That will overwrite your dist though, so maybe instead you want to add this:
-
-```bash
+```shell-session
 --output-path dist/fr
 ```
 
 What if your app is served like this `https://myapp.com/fr/`?
 
-```bash
+```shell-session
 --base-href /fr/
 ```
 

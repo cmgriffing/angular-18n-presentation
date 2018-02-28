@@ -1,7 +1,8 @@
 ## What didn't I cover?
 
 - Per-route bundles and how that impacts the compilation process?
-- (TODO: Probably more)
+
+- ngx-translate
 
 ## Citations
 

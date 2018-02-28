@@ -14,6 +14,26 @@ The number in each is the amount of letters between the start and end.
 It seems obvious now, but at first I had no idea why they were named this way.
 </div>
 
+## Why i18n
+
+Whats the point when we have Google Translate?
+
+![](./assets/google-translate.jpg)
+
+<div class="notes">
+Chrome can even identify pages in other languages and translate them for you using Google translate under the hood.
+</div>
+
+## However
+
+![](./assets/google-translate-no.jpg)
+
+<div class="notes">
+The results tend to range from being poorly worded to being complete gibberish.
+
+You can "get by" with it many times. But that isn't a great UX.
+</div>
+
 ## How i18n Generally works
 
 - The dev codes the app using default text values.
@@ -33,9 +53,11 @@ Multiple Options:
 - ngx-translate - http://www.ngx-translate.com/
 
 <div class="notes">
+There are a few other smaller libs but these are the big two options.
+
 Angular has the ability to inject the values at AOT compile time when most other frameworks and solutions rely on run-time injection.
 
-ngx-translate happens at run-time. This means two sets of translations could ship to the user.
+ngx-translate happens at run-time. This means two sets of translations could ship to the user as it swaps out the default.
 
 Important: Ask about audience familiarity with AOT/JIT.
 </div>
