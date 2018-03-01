@@ -20,7 +20,7 @@ After an overview of each step, I will attempt to go through the process live.
 ## Attributes
 
 ```html
-<a href="#" title="Something" i18n-title>Go To Google</a>
+<img alt="Something" i18n-alt src="..." />
 ```
 
 ## Tagging elements (ICU formatting)
@@ -45,6 +45,12 @@ You are even able to nest ICU syntax. The angular docs show an example of this, 
 ng xi18n
 ```
 
+No CLI?
+
+- ng-xi18n - a tool that is part of the `@angular/compiler` repo
+
+- [Webpack Plugin](https://github.com/angular/angular-cli/tree/master/packages/%40ngtools/webpack)
+
 <div class="notes">
 You can add paramaters to change things such as where the messages.xlf file is output to.
 
@@ -52,7 +58,7 @@ By default it will just create it in the src directory.
 
 You can also change the format. (`xmb` or `xlf`)
 
-xlf or XLIFF seems most common.
+xlf or XLIFF seems most common. But some services don't support the xliff format that Angular provides.
 </div>
 
 ## Editing the XLIFF (Before)
@@ -115,6 +121,14 @@ Improving aot enough for use during serve is a priority of the angular and angul
 
 Issue: You have a compilation for every language you support. How do you decide which to serve to your user?
 
-Browser's have some functionality but in the end, let the user choose as easily as possible. (drop-down in header, splash page, etc)
+Automatic detection is buggy based on browser/os.
+
+Allow the user to choose. (drop-down in header, splash page, etc)
+
+<div class="notes">
+User Accounts make this simpler
+
+Anonymous users need the ability to change.
+</div>
 
 ---

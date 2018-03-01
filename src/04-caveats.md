@@ -3,12 +3,11 @@
 ## ICU Attribute Values
 
 ```html
-<button
-  title="Delete {{itemCount}} {itemCount, plural, =1 {item} other {items}"
-  i18n-title
->
-  <i class="icon delete"></i>
-</button>
+<img
+  src="..."
+  alt="A dynamic image of {{itemCount}} {itemCount, plural, =1 {item} other {items}}"
+  i18n-alt
+/>
 ```
 
 ## Nesting

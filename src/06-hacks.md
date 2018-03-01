@@ -48,4 +48,12 @@ removeHtmlComments(html) {
 
 ## Dynamically Created Components
 
+- [Angular core guide](https://angular.io/guide/dynamic-component-loader)
+
+- [Rangle Blog post](http://blog.rangle.io/dynamically-creating-components-with-angular-2/)
+
+## Conference Call Bingo's Hackery
+
+[](./assets/shia-magic.gif)
+
 ---

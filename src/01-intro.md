@@ -37,8 +37,10 @@ You can "get by" with it many times. But that isn't a great UX.
 ## How i18n Generally works
 
 - The dev codes the app using default text values.
-- The translator receives an XLIFF file that contains the default values and translates them into the target language.
-- The app then uses this file to replace the default values with the translated ones.
+
+- The translator receives a file that contains the default values and translates them into the target language.
+
+- The app then uses this edited version of the file to replace the default values with the translated ones.
 
 <div class="notes">
 There are some tiny steps along the way that make this all possible and I will hopefully help you understand some of them better by the end of this.
