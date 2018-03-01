@@ -101,9 +101,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <section id="how-i18n-generally-works" class="level2">
 <h2>How i18n Generally works</h2>
 <ul>
-<li>The dev codes the app using default text values.</li>
-<li>The translator receives an XLIFF file that contains the default values and translates them into the target language.</li>
-<li>The app then uses this file to replace the default values with the translated ones.</li>
+<li><p>The dev codes the app using default text values.</p></li>
+<li><p>The translator receives a file that contains the default values and translates them into the target language.</p></li>
+<li><p>The app then uses this edited version of the file to replace the default values with the translated ones.</p></li>
 </ul>
 <aside class="notes">
 <p>There are some tiny steps along the way that make this all possible and I will hopefully help you understand some of them better by the end of this.</p>
@@ -159,7 +159,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </section>
 <section id="attributes" class="level2">
 <h2>Attributes</h2>
-<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#&quot;</span><span class="ot"> title=</span><span class="st">&quot;Something&quot;</span><span class="ot"> i18n-title</span><span class="kw">&gt;</span>Go To Google<span class="kw">&lt;/a&gt;</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;img</span><span class="ot"> alt=</span><span class="st">&quot;Something&quot;</span><span class="ot"> i18n-alt src=</span><span class="st">&quot;...&quot;</span> <span class="kw">/&gt;</span></code></pre></div>
 </section>
 <section id="tagging-elements-icu-formatting" class="level2">
 <h2>Tagging elements (ICU formatting)</h2>
@@ -173,11 +173,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <section id="extraction" class="level2">
 <h2>Extraction</h2>
 <pre class="shell-session"><code>ng xi18n</code></pre>
+<p>No CLI?</p>
+<ul>
+<li><p>ng-xi18n - a tool that is part of the <code>@angular/compiler</code> repo</p></li>
+<li><p><a href="https://github.com/angular/angular-cli/tree/master/packages/%40ngtools/webpack">Webpack Plugin</a></p></li>
+</ul>
 <aside class="notes">
 <p>You can add paramaters to change things such as where the messages.xlf file is output to.</p>
 <p>By default it will just create it in the src directory.</p>
 <p>You can also change the format. (<code>xmb</code> or <code>xlf</code>)</p>
-<p>xlf or XLIFF seems most common.</p>
+<p>xlf or XLIFF seems most common. But some services don't support the xliff format that Angular provides.</p>
 </aside>
 </section>
 <section id="editing-the-xliff-before" class="level2">
@@ -228,7 +233,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <section id="end-result-language-selection" class="level2">
 <h2>End result (language selection)</h2>
 <p>Issue: You have a compilation for every language you support. How do you decide which to serve to your user?</p>
-<p>Browser's have some functionality but in the end, let the user choose as easily as possible. (drop-down in header, splash page, etc)</p>
+<p>Automatic detection is buggy based on browser/os.</p>
+<p>Allow the user to choose. (drop-down in header, splash page, etc)</p>
+<aside class="notes">
+<p>User Accounts make this simpler</p>
+<p>Anonymous users need the ability to change.</p>
+</aside>
 </section>
 </section>
 <section class="slide level1">
@@ -244,12 +254,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </section>
 <section id="icu-attribute-values" class="level2">
 <h2>ICU Attribute Values</h2>
-<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;button</span>
-<span class="ot">  title=</span><span class="st">&quot;Delete {{itemCount}} {itemCount, plural, =1 {item} other {items}&quot;</span>
-<span class="ot">  i18n-title</span>
-<span class="kw">&gt;</span>
-  <span class="kw">&lt;i</span><span class="ot"> class=</span><span class="st">&quot;icon delete&quot;</span><span class="kw">&gt;&lt;/i&gt;</span>
-<span class="kw">&lt;/button&gt;</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;img</span>
+<span class="ot">  src=</span><span class="st">&quot;...&quot;</span>
+<span class="ot">  alt=</span><span class="st">&quot;A dynamic image of {{itemCount}} {itemCount, plural, =1 {item} other {items}}&quot;</span>
+<span class="ot">  i18n-alt</span>
+<span class="kw">/&gt;</span></code></pre></div>
 </section>
 <section id="nesting" class="level2">
 <h2>Nesting</h2>
@@ -315,6 +324,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </section>
 <section id="dynamically-created-components" class="level2">
 <h2>Dynamically Created Components</h2>
+<ul>
+<li><p><a href="https://angular.io/guide/dynamic-component-loader">Angular core guide</a></p></li>
+<li><p><a href="http://blog.rangle.io/dynamically-creating-components-with-angular-2/">Rangle Blog post</a></p></li>
+</ul>
+</section>
+<section id="conference-call-bingos-hackery" class="level2">
+<h2>Conference Call Bingo's Hackery</h2>
+<p><a href="./assets/shia-magic.gif"></a></p>
 </section>
 </section>
 <section class="slide level1">
@@ -324,17 +341,30 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <ul>
 <li><p>Per-route bundles and how that impacts the compilation process?</p></li>
 <li><p>ngx-translate</p></li>
+<li><p>Continuous translation workflows</p></li>
+<li><p>Date/time, number, and currency formatting - Angular pipes can help you with those: <a href="https://angular.io/guide/i18n#i18n-pipes" class="uri">https://angular.io/guide/i18n#i18n-pipes</a></p></li>
 </ul>
+<div>
+<p>Per route bundling could just work or it could have some quirks. I haven't gotten that far with it yet.</p>
+<p>ngx-translate is very solid. The only gripe is that it sends the entire translation file. Per-route bundling would mean that you are getting translations for pages you aren't viewing. And the intended translations have to wait for the whole file to download.</p>
+<p>I don't have any real world experience with translating an app, then adding features or content and dealing with merging the already translated xlf files with the base one that contains new fields. Maybe it just works depending on the translators editing software, I just don't know.</p>
+</div>
 </section>
 <section id="citations" class="level2">
 <h2>Citations</h2>
 <ul>
 <li><p>https://angular.io/guide/i18n</p></li>
 <li><p>https://github.com/angular/angular-cli/wiki/stories-internationalization</p></li>
+<li><p>https://github.com/cmgriffing/angular-i18n-presentation/demo</p></li>
+<li><p>https://github.com/cmgriffing/conference-call-bingo</p></li>
 </ul>
 <style class="styling-overrides">
   code {
     background: white;
+  }
+
+  .reveal section img {
+    max-height: 400px;
   }
 </style>
 </section>
