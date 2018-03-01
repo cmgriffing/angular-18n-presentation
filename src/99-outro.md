@@ -8,7 +8,7 @@
 
 - Date/time, number, and currency formatting - Angular pipes can help you with those: [https://angular.io/guide/i18n#i18n-pipes](https://angular.io/guide/i18n#i18n-pipes)
 
-<div>
+<div class="notes">
 
 Per route bundling could just work or it could have some quirks. I haven't gotten that far with it yet.
 
