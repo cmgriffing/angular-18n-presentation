@@ -1,0 +1,65 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+
+  <div class="section">
+    <button (click)="addMinute()">Add Minute</button>
+    <input placeholder="animal" (change)="setAnimalType($event.target.value)" />
+    <button (click)="addItem()" hidden>Add Item</button>
+  </div>
+
+  <div class="section">
+    <a href="google.com" i18n>
+      Go To Google
+    </a>
+  </div>
+
+  <div class="section">
+    <img src="..." alt="Something" i18n-alt />
+  </div>
+
+  <div class="section">
+    <span i18n>Updated {minutes, plural, =0 {just now} =1 {one minute ago} other {{{minutes}} minutes ago}}</span>
+  </div>
+
+  <div class="section">
+    <span i18n>Watch out for {animalType, select, wolf {wolves} cat {kitties} other {animals}}</span>
+  </div>
+
+  <!-- Caveats below -->
+
+  <div class="section" hidden>
+    <img
+      src="..."
+      alt="A dynamic image of {{ itemCount }} {itemCount, plural, =1 {item} other {items}}"
+    />
+  </div>
+
+  <!-- Hacky workaround for above -->
+  <div class="section" hidden>
+    <div hidden>
+      <!-- ICU selection message marked for translation -->
+      <span #altValue>A dynamic image of {{ itemCount }} {itemCount, plural, =1 {item} other {items}}</span>
+    </div>
+    <img [alt]="removeHtmlComments(altValue.innerHTML)" />
+  </div>
+
+
+  <div class="section" hidden>
+    Follow this <a href="#">link</a>.
+  </div>
+
+  <div class="section" hidden>
+    <span>{{ title }}</span>
+  </div>
+
+
+
+
+
+
+
+
+
+
+</div>
+

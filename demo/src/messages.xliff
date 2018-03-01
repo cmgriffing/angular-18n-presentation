@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="cea88b47e61412a1651eddbc93b2129c57a349b6" datatype="html">
+        <source>
+      Go To Google
+    </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.ts</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f4a388e12fa9581bea9166cea25c24f822bdcd12" datatype="html">
+        <source>Something</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.ts</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d69f6b42305f49332026fef24b40227f02e34594" datatype="html">
+        <source>Updated <x id="ICU" equiv-text="{minutes, plural, =0 {...} =1 {...} other {...}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.ts</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5a134dee893586d02bffc9611056b9cadf9abfad" datatype="html">
+        <source>{VAR_PLURAL, plural, =0 {just now} =1 {one minute ago} other {<x id="INTERPOLATION" equiv-text="{{minutes}}"/> minutes ago} }</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.ts</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="acf2b857aff9563366c80b490305ecedd063ee7f" datatype="html">
+        <source>Watch out for <x id="ICU" equiv-text="{animalType, select, wolf {...} cat {...} other {...}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.ts</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c6cb74fb6d045ca617f04ad6e4a15bcbd040cc52" datatype="html">
+        <source>{VAR_SELECT, select, wolf {wolves} cat {kitties} other {animals} }</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.ts</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
